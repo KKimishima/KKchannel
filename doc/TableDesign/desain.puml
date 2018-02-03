@@ -1,0 +1,22 @@
+@startuml
+package "KKchannel簡易掲示板" {
+    entity "ログインユーザ" as LOGINUSER {
+        + UERID(連番) [PK]
+        ----
+        USERNAME
+        PASS
+    }
+
+    entity "投稿内容" as CONTENTS {
+         + POSTID(連番) [PK]
+        ----
+        POSTTEXT
+        POSTTIME
+        POSTDATE
+        # USERID[FK]
+    }
+
+    LOGINUSER --l-- CONTENTS
+
+}
+@enduml
