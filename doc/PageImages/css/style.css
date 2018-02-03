@@ -1,0 +1,33 @@
+body{color: #333333;}
+
+/* --項目-- */
+/* 全体のp要素のサイズ*/
+p{font-size: 14px;}
+/* h要素のサイズ調整*/
+.pageTitle{
+  font-size: 26px;
+  background-color: skyblue;
+  padding: 5px 15px;
+}
+.heading-A{
+  font-size: 18px;
+  color: skyblue;
+  border-bottom: solid  1px;
+  padding: 5px;
+}
+.heading-B{
+  font-size: 16px;
+  border-left: solid 5px skyblue;
+  padding-left: 10px;
+}
+.heading-C{font-size: 14px;}
+.footer-P{font-size: 17px;}
+
+/* --余白設定-- */
+.article-Detail{}
+.article-Detail-Head{
+  border-bottom: solid 1px skyblue; 
+}
+.article-Detail-footer{
+  border-top: solid 1px skyblue;
+}
