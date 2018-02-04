@@ -11,50 +11,115 @@
 </head>
 
 <body>
-  <article class="article-Detail">
-    <header class="article-Detail-Head">
-      <h1 class="pageTitle">KKchannel</h1>
-      <p>
-        KKchannelにようこそ
-        <br>自由に投稿してみよう!!!
-      </p>
-      <ul> 
-        <li>メインページ</li>
-        <li>このサイトについて</li>
-        <li>リンク</li>
-      </ul>
-    </header>
-    <section>
-      <h2 class="heading-A">投稿一覧</h2>
-      <p>投稿一覧がここに表示されます</p>
-      <section> 
-        <h3 class="heading-B">XXXさんの登録</h3>
-        <p>投稿内容</p>
+  <div id="page">
+    <article class="article-Detail">
+      <header class="article-Detail-Head">
+        <h1 class="pageTitle">KKchannel</h1>
+        <nav class="menue">
+          <ul> 
+            <li>メインページ</li>
+            <li>このサイトについて</li>
+            <li>リンク</li>
+            <a href="http://hoge">ログアウト</a>
+          </ul>
+        </nav>
+        <p>
+          ほげほげ様
+          <br> KKchannelにようこそ
+          <br> 自由に投稿してみよう!!!
+        </p>
+      </header>
+      <section class="article-Detail-Body">
+        <h2 class="heading-A">投稿一覧</h2>
+        <p>投稿一覧がここに表示されます</p>
+        <section> 
+          <h3 class="heading-B">タイトルhogehoge</h3>
+          <div class="submenue">
+            <ul>
+              <li>名無しのほげさん</li>
+              <li>2018/01/01 00:00:00</li>
+            </ul>
+          </div>
+          <p>
+            翻訳は日本語力だと言われる。
+            <br> 日本語の文章力が肝心だと。
+            <br> もちろん、英文解釈力が前提なのは言うまでもない。
+            <br>うわべだけきれいな文章にまと めても、誤訳だらけでは意味がない。
+            <br>ただ、外国作家の文章として読まれるのは翻訳者の文章である。
+          </p>
+        </section>
+        <section> 
+          <h3 class="heading-B">タイトルhogehoge</h3>
+          <div class="submenue">
+            <ul>
+              <li>名無しのほげさん</li>
+              <li>2018/01/01 00:00:00</li>
+            </ul>
+          </div>
+          <p>
+            翻訳は日本語力だと言われる。
+            <br> 日本語の文章力が肝心だと。
+            <br> もちろん、英文解釈力が前提なのは言うまでもない。
+            <br>うわべだけきれいな文章にまと めても、誤訳だらけでは意味がない。
+            <br>ただ、外国作家の文章として読まれるのは翻訳者の文章である。
+          </p>
+        </section>
+        <section> 
+          <h3 class="heading-B">タイトルhogehoge</h3>
+          <div class="submenue">
+            <ul>
+              <li>名無しのほげさん</li>
+              <li>2018/01/01 00:00:00</li>
+            </ul>
+          </div>
+          <p>
+            翻訳は日本語力だと言われる。
+            <br> 日本語の文章力が肝心だと。
+            <br> もちろん、英文解釈力が前提なのは言うまでもない。
+            <br>うわべだけきれいな文章にまと めても、誤訳だらけでは意味がない。
+            <br>ただ、外国作家の文章として読まれるのは翻訳者の文章である。
+          </p>
+        </section>
       </section>
-      <section> 
-        <h3 class="heading-B">XXXさんの登録</h3>
-        <p>投稿内容</p>
+      <section class="article-Detail-Postform">
+        <h2 class="heading-A">記事投稿</h2>
+        <form action="hgoehogeTest" method="post">
+          <table>
+            <caption>記事フォーム</caption>
+            <tr>
+              <th>タイトル</th>
+              <td>
+                <input type="text" name="text" id="text">
+              </td>
+            </tr>
+            <tr>
+              <th>投稿内容</th>
+              <td>
+                <textarea name="comment" id="comment" cols="50" rows="5"></textarea>
+              </td>
+            </tr>
+          </table>
+          <input type="submit" value="投稿">
+          <input type="reset" value="クリア">
+        </form>
       </section>
-    </section>
-    <section> 
-      <h3 class="heading-B">XXXさんの登録</h3>
-      <p>投稿内容</p>
-    </section>
-    <footer class="article-Detail-footer">
-      <section>
-        <h2 class="heading-C">関連リンク</h2>
-        <ul>
-          <li>
-            <a href="https://google.co.jp">テストリンク1</a>
-          </li>
-          <li>
-            <a href="https://google.co.jp">テストリンク2</a>
-          </li>
-        </ul>
-      </section>
-      <p class="footer-P">作成者:KKimishima</p>
-    </footer>
-  </article>
+
+      <footer class="article-Detail-footer">
+        <section>
+          <h2 class="heading-D">関連リンク</h2>
+          <ul>
+            <li>
+              <a href="https://google.co.jp">テストリンク1</a>
+            </li>
+            <li>
+              <a href="https://google.co.jp">テストリンク2</a>
+            </li>
+          </ul>
+        </section>
+        <p class="footer-P">作成者:KKimishima</p>
+      </footer>
+    </article>
+  </div>
 </body>
 
 </html>
