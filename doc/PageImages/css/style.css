@@ -1,0 +1,113 @@
+body{color: #333333;}
+
+/* --項目-- */
+/* 全体のp要素のサイズ*/
+p{font-size: 14px;}
+/* h要素のサイズ調整*/
+.pageTitle{
+  font-size: 26px;
+  background-color: skyblue;
+  padding: 5px 15px;
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+.heading-A{
+  font-size: 18px;
+  color: skyblue;
+  border-bottom: solid  1px;
+  padding: 5px;
+}
+.heading-B{
+  font-size: 16px;
+  border-left: solid 5px skyblue;
+  padding-left: 10px;
+}
+.heading-C{
+  font-size: 14px;
+  border-left: solid 2px skyblue;
+  padding-left: 20px;
+}
+.heading-D{font-size: 14px;}
+.footer-P{font-size: 17px;}
+
+/* --余白設定-- */
+.article-Detail{}
+.article-Detail-Head{
+  border-bottom: solid 1px skyblue; 
+  margin-bottom: 30px;
+  padding-bottom: 10px; 
+}
+.article-Detail-footer{
+  border-top: solid 1px skyblue;
+  margin-top: 30px;
+  padding-top: 15px;
+}
+.article-Detail-Body section{
+  margin: 20px 0px;
+}
+.article-Detail-Postform{
+  margin: 50px 0px;
+}
+
+.menue{
+  background-color: skyblue;
+  padding: 3px;
+  border: 1px solid white;
+}
+.menue ul{
+  padding: 0px;
+  margin: 0px;
+  /* border: 1px solid white; */
+}
+
+.menue ul li{
+  display: inline;
+  margin-right: 1em;
+  color: white;  
+}
+
+.submenue{
+  border-left: 2px solid skyblue; 
+  padding: 3px;
+  margin: 0px;
+}
+
+.submenue ul{
+  padding: 0px;
+  margin: 0px;
+  /* border: 1px solid white; */
+}
+
+.submenue ul li{
+  display: inline;
+  margin-right: 3px;
+}
+
+table{
+  font-size: 14px;
+  border: 1px solid;
+  border-collapse: collapse;
+}
+
+table th,
+table td{
+  border: 1px solid;
+}
+
+table th{
+  background-color: rgb(193, 246, 250);
+  text-align: left;
+}
+table caption{
+  text-align: left;
+  font-weight: bold;
+}
+
+body{
+  background-color: rgb(249, 255, 255);
+}
+
+#page{
+  width: 980px;
+  margin: 0 auto;
+}
