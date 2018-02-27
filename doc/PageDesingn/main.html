@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <!-- boostrapリンク -->
+  <link rel="stylesheet" href="./css/bootstrap.min.css">
+  <link rel="stylesheet" href="./css/common.css">
+
+  <script src="./js/bootstrap.min.js"></script>
+  <script src="./js/jquery-3.3.1.min.js"></script>
+  <script src="./js/popper.min.js"></script>
+  <title>KKchannel</title>
+</head>
+
+<body>
+  <!-- ヘッダー -->
+  <header>
+    <div class="row">
+      <div class="col-12">
+        <nav class="navbar navbar-toggleable-md navbar-inverse bg-primary navbar-fixed-top">
+          <a class=" navbar-brand " href="# ">KKchannel</a>
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="# ">掲示板</a>
+            </li>
+            <li class="nav-item active">
+              <a class="nav-link" href="# ">連絡先</a>
+            </li>
+          </ul>
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item active">
+              <span class="navbar-text"> xxさん</span>
+            </li>
+            <li class="nav-item active">
+              <a class="nav-link" href="#">ログアウト</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <main>
+
+    <div class="container">
+      <!-- 説明 -->
+      <div class="jumbotron">
+        <h1 class="display-6">投稿内容が表示されます</h1>
+        <hr class="my-6">
+        <p class="lead">
+          気軽に書き込みんでみてください
+        </p>
+      </div>
+
+
+      <!-- 投稿内容 -->
+      <div class="card my-4">
+        <div class="card-header  bg-info  card-post">
+          <ul class="list-inline">
+            <li class="list-inline-item">
+              <h5>1</h5>
+            </li>
+            <li class="list-inline-item">
+              <h5>テスト投稿</h5>
+            </li>
+            <li class="list-inline-item">
+              <h5>2017/12/1</h5>
+            </li>
+            <li class="list-inline-item">
+              <h5>6:23:24</h5>
+            </li>
+          </ul>
+        </div>
+        <div class="card-block">
+          <p class="card-text">テストの投稿をおこなってみる</p>
+        </div>
+      </div>
+
+      <div class="card my-4">
+        <div class="card-header  bg-info card-post">
+          <ul class="list-inline">
+            <li class="list-inline-item">
+              <h5>1</h5>
+            </li>
+            <li class="list-inline-item">
+              <h5>テスト投稿</h5>
+            </li>
+            <li class="list-inline-item">
+              <h5>2017/12/1</h5>
+            </li>
+            <li class="list-inline-item">
+              <h5>6:23:24</h5>
+            </li>
+          </ul>
+        </div>
+        <div class="card-block">
+          <p class="card-text">テストの投稿をおこなってみる</p>
+        </div>
+      </div>
+
+      <div class="card my-4">
+        <div class="card-header  bg-info card-post">
+          <ul class="list-inline">
+            <li class="list-inline-item">
+              <h5>1</h5>
+            </li>
+            <li class="list-inline-item">
+              <h5>テスト投稿</h5>
+            </li>
+            <li class="list-inline-item">
+              <h5>2017/12/1</h5>
+            </li>
+            <li class="list-inline-item">
+              <h5>6:23:24</h5>
+            </li>
+          </ul>
+        </div>
+        <div class="card-block">
+          <p class="card-text">テストの投稿をおこなってみる</p>
+        </div>
+      </div>
+
+
+      <!-- 投稿フォーム -->
+      <div class="card">
+        <div class="card-header card-inverse bg-primary ">
+          <h4>投稿フォーム</h4>
+        </div>
+        <div class="card-body">
+          <p class="card-text">
+            <form action="/messge" method="post">
+              <div class="form-group">
+                <label for="UserName" class="form-cotntrol">タイトル</label>
+                <input type="text" name="user" id="user" class="form-control">
+              </div>
+              <div class="form-group">
+                <label for="body" class="form-label">
+                  登録内容
+                </label>
+                <textarea name="body" id="" cols="30" rows="10" placeholder="投稿内容" class="form-control"></textarea>
+                <p class="help-block">10000文字まで入力できます</p>
+              </div>
+              <button type="submit" class="btn btn-primary">投稿</button>
+              <button type="reset" class="btn btn-danger">リセット</button>
+            </form>
+          </p>
+        </div>
+        <!-- </p> -->
+      </div>
+    </div>
+  </main>
+  <!-- フッタ -->
+  <footer class="footer">
+    <div class="container">
+      <span class="text-muted">COPYRIGHT &#169; KKimishima.github.com ALL RIGHTS RESERVED. </span>
+    </div>
+  </footer>
+
+</body>
+
+</html>

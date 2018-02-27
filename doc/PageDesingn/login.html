@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <!-- boostrapリンク -->
+  <link rel="stylesheet" href="./css/bootstrap.min.css">
+  <link rel="stylesheet" href="./css/common.css">
+
+  <script src="./js/bootstrap.min.js"></script>
+  <script src="./js/jquery-3.3.1.min.js"></script>
+  <script src="./js/popper.min.js"></script>
+  <title>KKchannel</title>
+</head>
+
+<body>
+  <header>
+    <div class="row">
+      <div class="col-12">
+        <nav class="navbar navbar-toggleable-md navbar-inverse bg-primary navbar-fixed-top">
+          <a class=" navbar-brand " href="# ">KKchannel</a>
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="# ">掲示板</a>
+            </li>
+            <li class="nav-item active">
+              <a class="nav-link" href="# ">連絡先</a>
+            </li>
+          </ul>
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item active">
+              <span class="navbar-text"> xxさん</span>
+            </li>
+            <li class="nav-item active">
+              <a class="nav-link" href="#">ログアウト</a>
+              <li class="nav-item active">
+                <a class="nav-link" href="#">ログイン</a>
+              </li>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </header>
+  <main>
+
+    <!-- ログインフォーム -->
+    <div class="container">
+      <div class="mx-auto login-window">
+        <div class="card">
+          <div class="card-header card-primary card-inverse">
+            <h1>KKchannelへログイン</h1>
+          </div>
+          <div class="card-block">
+            <p class="card-text">
+              事前に申請したアカウントでロクグインしてください
+            </p>
+            <div class="alert alert-danger" role="alert">
+              <strong>ログイン失敗</strong>
+              <br> ユーザ名かパスワードが間違っています
+              <br>再度入力してください
+            </div>
+            <form action="/login" method="post">
+              <div class="form-group">
+                <label for="UserName">ログイン名</label>
+                <input type="text" name="user" id="user" class="form-control">
+              </div>
+              <div class="form-group">
+                <label for="Pass">パスワード</label>
+                <input type="password" name="pass" id="pass" class="form-control">
+              </div>
+              <button type="submit" class="btn btn-primary">ログイン</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- フッタ -->
+
+  <footer class="footer">
+    <div class="container">
+      <span class="text-muted">COPYRIGHT &#169; KKimishima.github.com ALL RIGHTS RESERVED. </span>
+    </div>
+  </footer>
+
+</body>
+
+</html>
