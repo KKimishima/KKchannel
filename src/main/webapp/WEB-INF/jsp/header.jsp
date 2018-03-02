@@ -5,7 +5,7 @@
     <div class="row">
       <div class="col-12">
         <nav class="navbar navbar-toggleable-md navbar-inverse bg-primary navbar-fixed-top">
-          <a class=" navbar-brand " href="# ">KKchannel</a>
+          <a class=" navbar-brand " href="/KKchannel">KKchannel</a>
           <ul class="navbar-nav mr-auto">
             <li class="nav-item active">
               <a class="nav-link" href="# ">掲示板</a>
