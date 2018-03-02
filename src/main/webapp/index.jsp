@@ -21,7 +21,7 @@
       <hr class="my-4">
       <p>下記のボタンをクリックしてログインしてください</p>
       <p class="lead">
-        <a class="btn btn-primary" href="#"> ログイン</a>
+        <a class="btn btn-primary" href="/KKchannel/LoginPage"> ログイン</a>
         <a class="btn btn-primary" href="#"> 掲示板へ</a>
       </p>
     </div>
