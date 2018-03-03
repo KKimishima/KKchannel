@@ -21,7 +21,7 @@
             <li class="nav-item active">
               <a class="nav-link" href="#">ログアウト</a>
               <li class="nav-item active">
-                <a class="nav-link" href="#">ログイン</a>
+                <a class="nav-link" href="/KKchannel/Login">ログイン</a>
               </li>
             </li>
           </ul>
