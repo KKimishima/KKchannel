@@ -1,11 +1,14 @@
 package com.github.KKimishima.controller;
 
+import com.github.KKimishima.model.LoginUser;
+
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import java.io.IOException;
 
 @WebServlet("/Login")
@@ -14,7 +17,7 @@ public class Login extends HttpServlet{
 
   @Override
   protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        RequestDispatcher rd = req.getRequestDispatcher(
+    RequestDispatcher rd = req.getRequestDispatcher(
         "/WEB-INF/jsp/Login.jsp"
     );
     rd.forward(req,resp);
@@ -22,10 +25,22 @@ public class Login extends HttpServlet{
 
   @Override
   protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-   req.setCharacterEncoding("UTF-8");
-   String user = req.getParameter("user");
-   String pass = req.getParameter("pass");
+    // セションスコープの確立
+    req.setCharacterEncoding("UTF-8");
+    HttpSession httpSession = req.getSession();
 
-   System.out.println("user =" + user +":  pass = " + pass);
+    // モデルに収納
+    String user = req.getParameter("user");
+    String pass = req.getParameter("pass");
+    LoginUser loginUser = new LoginUser(user,pass);
+
+    //セッションスコープに保存
+    httpSession.setAttribute("loginUser",loginUser);
+
+    // ログイン画面にフォワード
+    RequestDispatcher rd = req.getRequestDispatcher(
+        "/WEB-INF/jsp/Login.jsp"
+   );
+   rd.forward(req,resp);
   }
 }
