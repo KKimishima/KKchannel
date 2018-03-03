@@ -1,5 +1,6 @@
 package com.github.KKimishima.controller;
 
+import com.github.KKimishima.model.LoginLogic;
 import com.github.KKimishima.model.LoginUser;
 
 import javax.servlet.RequestDispatcher;
@@ -25,7 +26,7 @@ public class Login extends HttpServlet{
 
   @Override
   protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-    // セションスコープの確立
+    // キャラセット
     req.setCharacterEncoding("UTF-8");
     HttpSession httpSession = req.getSession();
 
@@ -34,13 +35,20 @@ public class Login extends HttpServlet{
     String pass = req.getParameter("pass");
     LoginUser loginUser = new LoginUser(user,pass);
 
-    //セッションスコープに保存
-    httpSession.setAttribute("loginUser",loginUser);
+    // ログインロジック
+    LoginLogic loginLogic = new LoginLogic(loginUser);
+    if (loginLogic.execute()){
+      // 成功
+      //セッションスコープに保存
+      httpSession.setAttribute("loginUser",loginUser);
+    }else {
+      httpSession.removeAttribute("loginUser");
+    }
 
     // ログイン画面にフォワード
     RequestDispatcher rd = req.getRequestDispatcher(
         "/WEB-INF/jsp/Login.jsp"
-   );
+    );
    rd.forward(req,resp);
   }
 }
