@@ -27,7 +27,8 @@
               <br> ユーザ名かパスワードが間違っています
               <br>再度入力してください
             </div>
-            <form action="/login" method="post">
+
+            <form action="/KKchannel/Login" method="post">
               <div class="form-group">
                 <label for="UserName">ログイン名</label>
                 <input type="text" name="user" id="user" class="form-control">
