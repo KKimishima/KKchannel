@@ -9,7 +9,7 @@ public class LoginLogicTest {
 
   @Test
   public void executeTest成功のパスワードを渡して成功させる() {
-    LoginUser loginUser = new LoginUser("admin","admin123");
+    LoginUser loginUser = new LoginUser("admin","admin");
     LoginLogic loginLogic = new LoginLogic(loginUser);
     assertThat(true,is(loginLogic.execute()));
   }
