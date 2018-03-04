@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jstl/core" %>
 
 <!DOCTYPE html>
 <html lang="ja">
@@ -9,6 +9,13 @@
 <body>
 
 <c:import url="WEB-INF/jsp/header.jsp" />
+
+<c:if test="${not empty loginUser}" >
+<h1>セッションテストテスト</h1>
+<h2>ログイン済み</h1>
+ユーザ = <c:out value="${loginUser.user}" /><br>
+パスワード =  <c:out value="${loginUser.pass}" /><br>
+</c:if>
 
 <main>
   <div class="container">
@@ -21,7 +28,7 @@
       <hr class="my-4">
       <p>下記のボタンをクリックしてログインしてください</p>
       <p class="lead">
-        <a class="btn btn-primary" href="#"> ログイン</a>
+        <a class="btn btn-primary" href="/KKchannel/Login"> ログイン</a>
         <a class="btn btn-primary" href="#"> 掲示板へ</a>
       </p>
     </div>
