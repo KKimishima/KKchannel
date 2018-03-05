@@ -15,7 +15,7 @@ public class InitDAOTest {
   @Test
   public void Test既存のDBがある場合() {
     InitDAO initDAO = new InitDAO();
-    initDAO.createDB();
+    initDAO.initTable();
     Connection con = null;
     try{
       con = DriverManager.getConnection(dbPath, dbUser, dbPass);

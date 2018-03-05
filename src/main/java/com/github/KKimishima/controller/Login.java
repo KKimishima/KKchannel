@@ -2,6 +2,7 @@ package com.github.KKimishima.controller;
 
 import com.github.KKimishima.model.InitDAO;
 import com.github.KKimishima.model.LoginLogic;
+import com.github.KKimishima.model.LoginResult;
 import com.github.KKimishima.model.LoginUser;
 
 import javax.servlet.RequestDispatcher;
@@ -18,12 +19,6 @@ public class Login extends HttpServlet{
   private final static long serialVersionUID = 1L;
 
   @Override
-  public void init() throws ServletException {
-    InitDAO initDAO = new InitDAO();
-    initDAO.createDB();
-  }
-
-  @Override
   protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
     RequestDispatcher rd = req.getRequestDispatcher(
         "/WEB-INF/jsp/Login.jsp"
@@ -34,7 +29,6 @@ public class Login extends HttpServlet{
   @Override
   protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
     // キャラセット
-    req.setCharacterEncoding("UTF-8");
     HttpSession httpSession = req.getSession();
 
     // モデルに収納
@@ -48,14 +42,19 @@ public class Login extends HttpServlet{
       // 成功
       //セッションスコープに保存
       httpSession.setAttribute("loginUser",loginUser);
+      // メイン画面にリダイレクト
+      resp.sendRedirect("/KKchannel/Main");
     }else {
+      // 失敗
+      LoginResult loginResult = new LoginResult(false);
+      req.setAttribute("loginResult",loginResult);
       httpSession.removeAttribute("loginUser");
+      // ログイン画面にフォワード
+      RequestDispatcher rd = req.getRequestDispatcher(
+          "/WEB-INF/jsp/Login.jsp"
+      );
+      rd.forward(req,resp);
     }
 
-    // ログイン画面にフォワード
-    RequestDispatcher rd = req.getRequestDispatcher(
-        "/WEB-INF/jsp/Login.jsp"
-    );
-   rd.forward(req,resp);
   }
 }

@@ -8,20 +8,30 @@
           <a class=" navbar-brand " href="/KKchannel">KKchannel</a>
           <ul class="navbar-nav mr-auto">
             <li class="nav-item active">
-              <a class="nav-link" href="# ">掲示板</a>
+              <a class="nav-link" href="/KKchannel/Main">掲示板</a>
             </li>
             <li class="nav-item active">
               <a class="nav-link" href="# ">連絡先</a>
             </li>
           </ul>
           <ul class="navbar-nav ml-auto">
+
+          <c:if test="${not empty loginUser}" >
             <li class="nav-item active">
-              <span class="navbar-text"> xxさん</span>
+              <span class="navbar-text"> <c:out value="${loginUser.user}" />さん</span>
             </li>
+           </c:if>
+
             <li class="nav-item active">
-              <a class="nav-link" href="#">ログアウト</a>
+
+                <c:if test="${not empty loginUser}" >
+                <a class="nav-link" href="/KKchannel/LogOff">ログアウト</a>
+                </c:if>
+
               <li class="nav-item active">
+                <c:if test="${empty loginUser}" >
                 <a class="nav-link" href="/KKchannel/Login">ログイン</a>
+                </c:if>
               </li>
             </li>
           </ul>

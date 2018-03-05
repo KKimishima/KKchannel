@@ -6,7 +6,7 @@ public class InitDAO {
  private final String dbPath = "jdbc:h2:file:~/.KKchannel/db/db";
  private final String dbUser = "sa";
  private final String dbPass = "";
- public void createDB(){
+ public void initTable(){
   Connection con =null;
 
   try {

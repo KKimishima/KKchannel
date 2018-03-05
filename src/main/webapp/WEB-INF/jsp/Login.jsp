@@ -11,13 +11,6 @@
 <c:import url="header.jsp" />
   <main>
 
-<c:if test="${not empty loginUser}" >
-<h1>セッションテストテスト</h1>
-<h2>ログイン済み</h1>
-ユーザ = <c:out value="${loginUser.user}" /><br>
-パスワード =  <c:out value="${loginUser.pass}" /><br>
-</c:if>
-
     <!-- ログインフォーム -->
     <div class="container">
       <div class="mx-auto login-window">
@@ -29,11 +22,14 @@
             <p class="card-text">
               事前に申請したアカウントでロクグインしてください
             </p>
+
+            <c:if test="${not empty loginResult}" >
             <div class="alert alert-danger" role="alert">
               <strong>ログイン失敗</strong>
               <br> ユーザ名かパスワードが間違っています
               <br>再度入力してください
             </div>
+            </c:if>
 
             <form action="/KKchannel/Login" method="post">
               <div class="form-group">

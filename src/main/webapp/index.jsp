@@ -10,12 +10,6 @@
 
 <c:import url="WEB-INF/jsp/header.jsp" />
 
-<c:if test="${not empty loginUser}" >
-<h1>セッションテストテスト</h1>
-<h2>ログイン済み</h1>
-ユーザ = <c:out value="${loginUser.user}" /><br>
-パスワード =  <c:out value="${loginUser.pass}" /><br>
-</c:if>
 
 <main>
   <div class="container">
@@ -28,8 +22,12 @@
       <hr class="my-4">
       <p>下記のボタンをクリックしてログインしてください</p>
       <p class="lead">
+        <c:if test="${empty loginUser}" >
         <a class="btn btn-primary" href="/KKchannel/Login"> ログイン</a>
-        <a class="btn btn-primary" href="#"> 掲示板へ</a>
+        </c:if>
+        <c:if test="${not empty loginUser}" >
+        <a class="btn btn-primary" href="/KKchannel/Main"> 掲示板へ</a>
+        </c:if>
       </p>
     </div>
   </div>
