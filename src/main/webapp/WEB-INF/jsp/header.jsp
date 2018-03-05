@@ -8,7 +8,7 @@
           <a class=" navbar-brand " href="/KKchannel">KKchannel</a>
           <ul class="navbar-nav mr-auto">
             <li class="nav-item active">
-              <a class="nav-link" href="# ">掲示板</a>
+              <a class="nav-link" href="/KKchannel/Main">掲示板</a>
             </li>
             <li class="nav-item active">
               <a class="nav-link" href="# ">連絡先</a>
