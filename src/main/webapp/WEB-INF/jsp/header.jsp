@@ -19,7 +19,7 @@
               <span class="navbar-text"> xxさん</span>
             </li>
             <li class="nav-item active">
-              <a class="nav-link" href="#">ログアウト</a>
+              <a class="nav-link" href="/KKchannel/LogOff">ログアウト</a>
               <li class="nav-item active">
                 <a class="nav-link" href="/KKchannel/Login">ログイン</a>
               </li>
