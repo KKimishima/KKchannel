@@ -2,6 +2,7 @@ package com.github.KKimishima.controller;
 
 import com.github.KKimishima.model.InitDAO;
 import com.github.KKimishima.model.LoginLogic;
+import com.github.KKimishima.model.LoginResult;
 import com.github.KKimishima.model.LoginUser;
 
 import javax.servlet.RequestDispatcher;
@@ -44,6 +45,9 @@ public class Login extends HttpServlet{
       // メイン画面にリダイレクト
       resp.sendRedirect("/KKchannel/Main");
     }else {
+      // 失敗
+      LoginResult loginResult = new LoginResult(false);
+      req.setAttribute("loginResult",loginResult);
       httpSession.removeAttribute("loginUser");
       // ログイン画面にフォワード
       RequestDispatcher rd = req.getRequestDispatcher(

@@ -11,12 +11,6 @@
 <c:import url="header.jsp" />
   <main>
 
-<c:if test="${not empty loginUser}" >
-<h1>セッションテストテスト</h1>
-<h2>ログイン済み</h1>
-ユーザ = <c:out value="${loginUser.user}" /><br>
-パスワード =  <c:out value="${loginUser.pass}" /><br>
-</c:if>
 
   <main>
 
