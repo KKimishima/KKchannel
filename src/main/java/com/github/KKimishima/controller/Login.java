@@ -18,12 +18,6 @@ public class Login extends HttpServlet{
   private final static long serialVersionUID = 1L;
 
   @Override
-  public void init() throws ServletException {
-    InitDAO initDAO = new InitDAO();
-    initDAO.createDB();
-  }
-
-  @Override
   protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
     RequestDispatcher rd = req.getRequestDispatcher(
         "/WEB-INF/jsp/Login.jsp"
