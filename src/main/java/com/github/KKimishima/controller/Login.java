@@ -28,7 +28,6 @@ public class Login extends HttpServlet{
   @Override
   protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
     // キャラセット
-    req.setCharacterEncoding("UTF-8");
     HttpSession httpSession = req.getSession();
 
     // モデルに収納
@@ -42,14 +41,16 @@ public class Login extends HttpServlet{
       // 成功
       //セッションスコープに保存
       httpSession.setAttribute("loginUser",loginUser);
+      // メイン画面にリダイレクト
+      resp.sendRedirect("/KKchannel/Main");
     }else {
       httpSession.removeAttribute("loginUser");
+      // ログイン画面にフォワード
+      RequestDispatcher rd = req.getRequestDispatcher(
+          "/WEB-INF/jsp/Login.jsp"
+      );
+      rd.forward(req,resp);
     }
 
-    // ログイン画面にフォワード
-    RequestDispatcher rd = req.getRequestDispatcher(
-        "/WEB-INF/jsp/Login.jsp"
-    );
-   rd.forward(req,resp);
   }
 }
