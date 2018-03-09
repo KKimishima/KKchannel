@@ -56,4 +56,29 @@ public class ContentsDAO {
       }
     }
   }
+  public void ExecutePost(String title,String text,Integer userID){
+    Connection con =null;
+    try {
+      con = DriverManager.getConnection(dbPath, dbUser, dbPass);
+
+      PreparedStatement ps = con.prepareStatement(
+          "insert into CONTENTS(TITLE,TEXT,POSTDATE,POSTTIME,USERID) values(?,?,CURRENT_DATE(),CURRENT_TIME(),?);"
+      );
+      ps.setString(1,title);
+      ps.setString(2,text);
+      ps.setInt(3,userID);
+      ps.execute();
+
+    }catch (SQLException e){
+      e.printStackTrace();
+    }finally {
+      try {
+        if (con != null){
+          con.close();
+        }
+      }catch (SQLException e){
+        e.printStackTrace();
+      }
+    }
+  }
 }
