@@ -11,9 +11,6 @@
 <c:import url="header.jsp" />
   <main>
 
-
-  <main>
-
     <div class="container">
       <!-- 説明 -->
       <div class="jumbotron">
@@ -24,74 +21,30 @@
         </p>
       </div>
 
-
+    <c:forEach var="obj" items="${list}" varStatus="status">
       <!-- 投稿内容 -->
       <div class="card my-4">
         <div class="card-header  bg-info  card-post">
           <ul class="list-inline">
             <li class="list-inline-item">
-              <h5>1</h5>
+              <h5><c:out value="${obj.postID}"/></h5>
             </li>
             <li class="list-inline-item">
-              <h5>テスト投稿</h5>
+              <h5><c:out value="${obj.title}"/></h5>
             </li>
             <li class="list-inline-item">
-              <h5>2017/12/1</h5>
+              <h5><c:out value="${obj.date}"/></h5>
             </li>
             <li class="list-inline-item">
-              <h5>6:23:24</h5>
+              <h5><c:out value="${obj.time}"/></h5>
             </li>
           </ul>
         </div>
         <div class="card-block">
-          <p class="card-text">テストの投稿をおこなってみる</p>
+          <p class="card-text"><c:out value="${obj.text}"/></p>
         </div>
       </div>
-
-      <div class="card my-4">
-        <div class="card-header  bg-info card-post">
-          <ul class="list-inline">
-            <li class="list-inline-item">
-              <h5>1</h5>
-            </li>
-            <li class="list-inline-item">
-              <h5>テスト投稿</h5>
-            </li>
-            <li class="list-inline-item">
-              <h5>2017/12/1</h5>
-            </li>
-            <li class="list-inline-item">
-              <h5>6:23:24</h5>
-            </li>
-          </ul>
-        </div>
-        <div class="card-block">
-          <p class="card-text">テストの投稿をおこなってみる</p>
-        </div>
-      </div>
-
-      <div class="card my-4">
-        <div class="card-header  bg-info card-post">
-          <ul class="list-inline">
-            <li class="list-inline-item">
-              <h5>1</h5>
-            </li>
-            <li class="list-inline-item">
-              <h5>テスト投稿</h5>
-            </li>
-            <li class="list-inline-item">
-              <h5>2017/12/1</h5>
-            </li>
-            <li class="list-inline-item">
-              <h5>6:23:24</h5>
-            </li>
-          </ul>
-        </div>
-        <div class="card-block">
-          <p class="card-text">テストの投稿をおこなってみる</p>
-        </div>
-      </div>
-
+    </c:forEach>
 
       <!-- 投稿フォーム -->
       <div class="card">
@@ -100,16 +53,16 @@
         </div>
         <div class="card-body">
           <p class="card-text">
-            <form action="/messge" method="post">
+            <form action="/KKchannel/Main" method="post">
               <div class="form-group">
                 <label for="UserName" class="form-cotntrol">タイトル</label>
-                <input type="text" name="user" id="user" class="form-control">
+                <input type="text" name="title" id="title" class="form-control">
               </div>
               <div class="form-group">
                 <label for="body" class="form-label">
                   登録内容
                 </label>
-                <textarea name="body" id="" cols="30" rows="10" placeholder="投稿内容" class="form-control"></textarea>
+                <textarea name="body" id="text" cols="30" rows="10" placeholder="投稿内容" class="form-control"></textarea>
                 <p class="help-block">10000文字まで入力できます</p>
               </div>
               <button type="submit" class="btn btn-primary">投稿</button>
