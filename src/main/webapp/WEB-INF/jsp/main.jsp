@@ -30,6 +30,8 @@
               <h5><c:out value="${obj.postID}"/></h5>
             </li>
             <li class="list-inline-item">
+                <h5><c:out value="${obj.userName}"/>さん</h5>
+            <li class="list-inline-item">
               <h5><c:out value="${obj.title}"/></h5>
             </li>
             <li class="list-inline-item">
