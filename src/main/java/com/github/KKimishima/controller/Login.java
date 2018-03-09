@@ -37,7 +37,7 @@ public class Login extends HttpServlet{
 
     // ログインロジック
     LoginLogic loginLogic = new LoginLogic(loginUser);
-    if (loginLogic.execute()){
+    if (loginLogic.execute(loginUser)){
       // 成功
       //セッションスコープに保存
       httpSession.setAttribute("loginUser",loginUser);
