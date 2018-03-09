@@ -1,6 +1,7 @@
-package com.github.KKimishima.model;
+package com.github.KKimishima.model.Logic;
 
-import com.github.KKimishima.controller.Login;
+import com.github.KKimishima.model.DAO.LoginDAO;
+import com.github.KKimishima.model.beans.LoginUser;
 
 public class LoginLogic {
   private String user;

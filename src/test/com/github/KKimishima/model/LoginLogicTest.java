@@ -1,5 +1,7 @@
 package com.github.KKimishima.model;
 
+import com.github.KKimishima.model.Logic.LoginLogic;
+import com.github.KKimishima.model.beans.LoginUser;
 import org.junit.Test;
 
 import static org.hamcrest.core.Is.is;

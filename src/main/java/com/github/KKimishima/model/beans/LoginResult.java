@@ -1,4 +1,4 @@
-package com.github.KKimishima.model;
+package com.github.KKimishima.model.beans;
 
 import java.io.Serializable;
 

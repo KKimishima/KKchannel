@@ -1,5 +1,6 @@
 package com.github.KKimishima.model;
 
+import com.github.KKimishima.model.DAO.InitDAO;
 import org.junit.Test;
 
 import java.sql.*;
