@@ -1,5 +1,6 @@
 package com.github.KKimishima.controller;
 
+import com.github.KKimishima.model.DAO.ContentsDAO;
 import com.github.KKimishima.model.Logic.ContentsLogic;
 import com.github.KKimishima.model.Logic.PostCheckLogic;
 import com.github.KKimishima.model.beans.Contents;
@@ -36,6 +37,7 @@ public class Main  extends HttpServlet{
   protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
     ContentsLogic contentsLogic = new ContentsLogic();
     PostCheckLogic postCheckLogic = new PostCheckLogic();
+    ContentsDAO contentsDAO = new ContentsDAO();
     HttpSession httpSession = req.getSession();
     List<Contents> list = contentsLogic.execute();
 
@@ -47,13 +49,9 @@ public class Main  extends HttpServlet{
     LoginUser loginUser =(LoginUser)httpSession.getAttribute("loginUser");
 
     if (postCheckLogic.execute(title,text)){
-      System.out.println("空ではないよ");
+      contentsDAO.ExecutePost(title,text,loginUser.getUserID());
     }
 
-
-    RequestDispatcher rd = req.getRequestDispatcher(
-        "/WEB-INF/jsp/main.jsp"
-    );
-    rd.forward(req,resp);
+    resp.sendRedirect("/KKchannel/Main");
   }
 }
