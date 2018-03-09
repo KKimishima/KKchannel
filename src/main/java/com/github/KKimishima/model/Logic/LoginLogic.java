@@ -11,8 +11,10 @@ public class LoginLogic {
     this.user = loginUser.getUser();
     this.pass = loginUser.getPass();
   }
-  public Boolean execute(){
-    if (loginDAO.execute(user,pass)){
+  public Boolean execute(LoginUser loginUser){
+    Integer result = loginDAO.execute(user,pass);
+    if (!(result == null)){
+      loginUser.setUserID(result);
       return true;
     }
       return false;
