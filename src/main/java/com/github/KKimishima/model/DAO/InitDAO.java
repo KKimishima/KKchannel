@@ -1,4 +1,4 @@
-package com.github.KKimishima.model;
+package com.github.KKimishima.model.DAO;
 
 import java.sql.*;
 
@@ -41,6 +41,7 @@ public class InitDAO {
    PreparedStatement contetsTB = con.prepareStatement(
        "CREATE TABLE IF NOT EXISTS  CONTENTS(\n" +
            "    POSTID  int Identity(1,1)   not null    primary key,\n" +
+           "    TITLE   varchar(255) not null, \n" +
            "    TEXT    varchar(255)        not null,\n" +
            "    POSTDATE DATE      not null,\n" +
            "    POSTTIME TIME       not null,\n" +
@@ -58,7 +59,7 @@ public class InitDAO {
    ResultSet contetusFNRS = contentsFN.executeQuery();
    if (!contetusFNRS.next()){
     PreparedStatement setDB = con.prepareStatement(
-        "insert into CONTENTS(TEXT,POSTDATE,POSTTIME,USERID) values('こんにちわ',CURRENT_DATE(),CURRENT_TIME(),1);"
+        "insert into CONTENTS(TEXT,TITLE,POSTDATE,POSTTIME,USERID) values('こんにちわ','テスト投稿',CURRENT_DATE(),CURRENT_TIME(),1);"
     );
     setDB.execute();
    }

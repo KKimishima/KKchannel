@@ -1,6 +1,6 @@
 package com.github.KKimishima.listener;
 
-import com.github.KKimishima.model.InitDAO;
+import com.github.KKimishima.model.DAO.InitDAO;
 
 import javax.servlet.ServletContextEvent;
 import javax.servlet.ServletContextListener;

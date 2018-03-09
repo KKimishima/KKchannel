@@ -1,9 +1,8 @@
 package com.github.KKimishima.controller;
 
-import com.github.KKimishima.model.InitDAO;
-import com.github.KKimishima.model.LoginLogic;
-import com.github.KKimishima.model.LoginResult;
-import com.github.KKimishima.model.LoginUser;
+import com.github.KKimishima.model.Logic.LoginLogic;
+import com.github.KKimishima.model.beans.LoginResult;
+import com.github.KKimishima.model.beans.LoginUser;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -38,7 +37,7 @@ public class Login extends HttpServlet{
 
     // ログインロジック
     LoginLogic loginLogic = new LoginLogic(loginUser);
-    if (loginLogic.execute()){
+    if (loginLogic.execute(loginUser)){
       // 成功
       //セッションスコープに保存
       httpSession.setAttribute("loginUser",loginUser);

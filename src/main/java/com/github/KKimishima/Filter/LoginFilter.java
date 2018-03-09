@@ -1,6 +1,6 @@
 package com.github.KKimishima.Filter;
 
-import com.github.KKimishima.model.LoginUser;
+import com.github.KKimishima.model.beans.LoginUser;
 
 import javax.servlet.*;
 import javax.servlet.annotation.WebFilter;
