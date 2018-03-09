@@ -40,7 +40,7 @@ public class Main  extends HttpServlet{
     req.setAttribute("list",list);
 
     String title = req.getParameter("title");
-    String text = req.getParameter("text");
+    String text = req.getParameter("body");
 
 
     HttpSession httpSession = req.getSession();
