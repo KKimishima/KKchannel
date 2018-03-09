@@ -1,6 +1,7 @@
 package com.github.KKimishima.controller;
 
 import com.github.KKimishima.model.Logic.ContentsLogic;
+import com.github.KKimishima.model.Logic.PostCheckLogic;
 import com.github.KKimishima.model.beans.Contents;
 import com.github.KKimishima.model.beans.LoginUser;
 
@@ -34,19 +35,22 @@ public class Main  extends HttpServlet{
   @Override
   protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
     ContentsLogic contentsLogic = new ContentsLogic();
+    PostCheckLogic postCheckLogic = new PostCheckLogic();
+    HttpSession httpSession = req.getSession();
     List<Contents> list = contentsLogic.execute();
 
 
     req.setAttribute("list",list);
-
     String title = req.getParameter("title");
     String text = req.getParameter("body");
 
-
-    HttpSession httpSession = req.getSession();
     LoginUser loginUser =(LoginUser)httpSession.getAttribute("loginUser");
 
-    System.out.println("title = "+ title + ": text =" +text + ": userID = "+ loginUser.getUserID());
+    if (postCheckLogic.execute(title,text)){
+      System.out.println("空ではないよ");
+    }
+
+
     RequestDispatcher rd = req.getRequestDispatcher(
         "/WEB-INF/jsp/main.jsp"
     );
