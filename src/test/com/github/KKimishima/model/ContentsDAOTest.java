@@ -21,6 +21,11 @@ public class ContentsDAOTest {
     assertThat(list.get(0).getDate(),is("2018-03-06"));
     assertThat(list.get(0).getTime(),is("22:17:07"));
     assertThat(list.get(0).getUserName(),is("admin"));
+  }
 
+  @Test
+  public void ExecutePost() {
+    ContentsDAO contentsDAO =  new ContentsDAO();
+    contentsDAO.ExecutePost("ポストテストタイトル","postTest本文",1);
   }
 }
