@@ -55,6 +55,21 @@
         </div>
         <div class="card-block">
           <p class="card-text"><c:out value="${obj.text}"/></p>
+
+          <div class="text-right">
+            <a href="
+                <c:url value="/Main/Edit">
+                    <c:param name="postID" value="${obj.postID}" />
+                 </c:url>
+            " class="btn btn-warning" role="button">編集</a>
+
+             <a href="
+                <c:url value="/Main/Delete">
+                    <c:param name="postID" value="${obj.postID}" />
+                 </c:url>
+             " class="btn btn-danger" role="button">削除</a>
+          </div>
+
         </div>
       </div>
     </c:forEach>
