@@ -8,6 +8,17 @@
 
 <body>
 
+    <script>
+        function checkForm() {
+            if (document.post_form.title.value == ""|| document.post_form.body.value == "") {
+                alert("タイトルか登録内容が空です\n内容を入力してください");
+                return false;
+            } else {
+                return true;
+            }
+        }
+    </script>
+
 <c:import url="header.jsp" />
   <main>
 
@@ -44,6 +55,21 @@
         </div>
         <div class="card-block">
           <p class="card-text"><c:out value="${obj.text}"/></p>
+
+          <div class="text-right">
+            <a href="
+                <c:url value="/Main/Edit">
+                    <c:param name="postID" value="${obj.postID}" />
+                 </c:url>
+            " class="btn btn-warning" role="button">編集</a>
+
+             <a href="
+                <c:url value="/Main/Delete">
+                    <c:param name="postID" value="${obj.postID}" />
+                 </c:url>
+             " class="btn btn-danger" role="button">削除</a>
+          </div>
+
         </div>
       </div>
     </c:forEach>
@@ -55,7 +81,7 @@
         </div>
         <div class="card-body">
           <p class="card-text">
-            <form action="/KKchannel/Main" method="post">
+            <form action="/KKchannel/Main" method="post" name="post_form">
               <div class="form-group">
                 <label for="UserName" class="form-cotntrol">タイトル</label>
                 <input type="text" name="title" id="title" class="form-control">
@@ -67,7 +93,7 @@
                 <textarea name="body" id="text" cols="30" rows="10" placeholder="投稿内容" class="form-control"></textarea>
                 <p class="help-block">10000文字まで入力できます</p>
               </div>
-              <button type="submit" class="btn btn-primary">投稿</button>
+              <button type="submit" class="btn btn-primary" onclick="return checkForm()">投稿</button>
               <button type="reset" class="btn btn-danger">リセット</button>
             </form>
           </p>
