@@ -62,13 +62,22 @@
                     <c:param name="postID" value="${obj.postID}" />
                  </c:url>
             " class="btn btn-warning" role="button">編集</a>
-
+<%--
              <a href="
                 <c:url value="/Main/Delete">
                     <c:param name="postID" value="${obj.postID}" />
                  </c:url>
              " class="btn btn-danger" role="button">削除</a>
           </div>
+--%>
+          <jsp:element name="button" >
+          <jsp:attribute name="class">del-btn btn btn-danger</jsp:attribute>
+          <jsp:attribute name="data-postID">
+            <c:out value="${obj.postID}"/>
+          </jsp:attribute>
+          <jsp:body>削除</jsp:body>
+          </jsp:element>
+        </div>
 
         </div>
       </div>
