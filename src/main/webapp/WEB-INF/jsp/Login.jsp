@@ -23,15 +23,10 @@
               事前に申請したアカウントでロクグインしてください
             </p>
 
-            <c:if test="${not empty loginResult}" >
-            <div class="alert alert-danger" role="alert">
-              <strong>ログイン失敗</strong>
-              <br> ユーザ名かパスワードが間違っています
-              <br>再度入力してください
+            <div id="error_msg">
             </div>
-            </c:if>
 
-            <form action="/KKchannel/Login" method="post">
+            <form>
               <div class="form-group">
                 <label for="UserName">ログイン名</label>
                 <input type="text" name="user" id="user" class="form-control">
@@ -40,12 +35,13 @@
                 <label for="Pass">パスワード</label>
                 <input type="password" name="pass" id="pass" class="form-control">
               </div>
-              <button type="submit" class="btn btn-primary">ログイン</button>
+              <input type="button" id="login-btn" value="ログイン" class="btn btn-primary">
             </form>
           </div>
         </div>
       </div>
     </div>
+  </main>
 <c:import url="footer.jsp" />
 
 </body>
