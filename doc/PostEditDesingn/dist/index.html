@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+
+
+
+<html lang="ja">
+
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+  <script src="./main.js"></script>
+
+  <title>KKchannel</title>
+</head>
+
+<body>
+
+  <script>
+    function checkForm() {
+      if (document.post_form.title.value == "" || document.post_form.body.value == "") {
+        alert("タイトルか登録内容が空です\n内容を入力してください");
+        return false;
+      } else {
+        return true;
+      }
+    }
+  </script>
+
+
+
+
+  <header>
+    <div class="row">
+      <div class="col-12">
+        <nav class="navbar navbar-toggleable-md navbar-inverse bg-primary navbar-fixed-top">
+          <a class=" navbar-brand " href="/KKchannel">KKchannel</a>
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="/KKchannel/Main">掲示板</a>
+            </li>
+            <li class="nav-item active">
+              <a class="nav-link" href="# ">連絡先</a>
+            </li>
+          </ul>
+          <ul class="navbar-nav ml-auto">
+
+
+            <li class="nav-item active">
+              <span class="navbar-text"> adminさん</span>
+            </li>
+
+
+            <li class="nav-item active">
+
+
+              <a class="nav-link" href="/KKchannel/LogOff">ログアウト</a>
+
+
+              <li class="nav-item active">
+
+              </li>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </header>
+  <main>
+
+    <div class="container">
+      <!-- 説明 -->
+      <div class="jumbotron">
+        <h1 class="display-6">投稿内容が表示されます</h1>
+        <hr class="my-6">
+        <p class="lead">
+          気軽に書き込みんでみてください
+        </p>
+      </div>
+
+
+      <!-- 投稿内容 -->
+      <div class="card my-4" id="post-data-1">
+        <!-- <div class="card-header  bg-info  card-post"> -->
+        <div class="card-header  bg-info card-post">
+          <ul class="list-inline">
+            <li class="list-inline-item post-id">
+              <h5>1</h5>
+            </li>
+            <li class="list-inline-item post-name">
+              <h5>adminさん</h5>
+              <li class="list-inline-item post-title">
+                <h5>テスト投稿</h5>
+              </li>
+              <li class="list-inline-item post-date">
+                <h5>2018-03-06</h5>
+              </li>
+              <li class="list-inline-item post-time">
+                <h5>22:17:07</h5>
+              </li>
+            </li>
+          </ul>
+        </div>
+        <div class="card-block post-message">
+          <p class="card-text ">こんにちわ</p>
+
+          <div class="text-right">
+
+
+            <button type="button" class="btn btn-primary" data-toggle="modal" data-postid="1" data-target="#edit">編集</button>
+            <!-- <div class="modal fade" data-postid="1" tabindex="-1" role="dialog" aria-labelledby="edit" aria-hidden="true">
+              <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title">編集</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="閉じる">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>
+                  <div class="modal-body">
+                    <form>
+                      <div class="form-group">
+                        <label for="recipient-name">タイトル：</label>
+                        <input type="text" class="form-control edit-title">
+                      </div>
+                      <div class="form-group">
+                        <label for="message-text">メッセージ：</label>
+                        <textarea class="form-control edit-massege"></textarea>
+                      </div>
+                    </form>
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">閉じる</button>
+                    <button type="button" class="btn btn-primary edit-post">送信</button>
+                  </div>
+                </div>
+              </div>
+            </div> -->
+
+
+
+            <a href="
+                /KKchannel/Main/Edit?postID=1
+            " class="btn btn-warning" role="button">編集</a>
+
+            <button data-postID="1" class="del-btn btn btn-danger">削除</button>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- 投稿内容 -->
+      <div class="card my-4" id="post-data-94">
+        <div class="card-header  bg-info  card-post">
+          <ul class="list-inline">
+            <li class="list-inline-item post-id">
+              <h5>94</h5>
+            </li>
+            <li class="list-inline-item post-name">
+              <h5>adminさん</h5>
+              <li class="list-inline-item post-title">
+                <h5>test</h5>
+              </li>
+              <li class="list-inline-item post-date">
+                <h5>2018-03-30</h5>
+              </li>
+              <li class="list-inline-item post-time">
+                <h5>00:58:34</h5>
+              </li>
+            </li>
+          </ul>
+        </div>
+        <div class="card-block post-message">
+          <p class="card-text">94番目の投稿</p>
+
+          <div class="text-right">
+            <button type="button" class="btn btn-primary" data-toggle="modal" data-postid="94" data-target="#edit">編集</button>
+
+            <a href="
+                /KKchannel/Main/Edit?postID=94
+            " class="btn btn-warning" role="button">編集</a>
+
+            <button data-postID="94" class="del-btn btn btn-danger">削除</button>
+          </div>
+
+        </div>
+      </div>
+
+
+      <div class="modal fade" id="edit" data-postid="94" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title">編集</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="閉じる">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <div id="edit-result"></div>
+              <form>
+                <div class="form-group">
+                  <label for="recipient-name">タイトル：</label>
+                  <input type="text" class="form-control edit-title">
+                </div>
+                <div class="form-group">
+                  <label for="message-text">メッセージ：</label>
+                  <textarea class="form-control edit-massege"></textarea>
+                </div>
+              </form>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">閉じる</button>
+              <button type="button" class="btn btn-primary edit-post">送信</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 投稿フォーム -->
+      <div class="card">
+        <div class="card-header card-inverse bg-primary ">
+          <h4>投稿フォーム</h4>
+        </div>
+        <div class="card-body">
+          <p class="card-text">
+            <form action="/KKchannel/Main" method="post" name="post_form">
+              <div class="form-group">
+                <label for="UserName" class="form-cotntrol">タイトル</label>
+                <input type="text" name="title" id="title" class="form-control">
+              </div>
+              <div class="form-group">
+                <label for="body" class="form-label">
+                  登録内容
+                </label>
+                <textarea name="body" id="text" cols="30" rows="10" placeholder="投稿内容" class="form-control"></textarea>
+                <p class="help-block">10000文字まで入力できます</p>
+              </div>
+              <button type="submit" class="btn btn-primary" onclick="return checkForm()">投稿</button>
+              <button type="reset" class="btn btn-danger">リセット</button>
+            </form>
+          </p>
+        </div>
+      </div>
+    </div>
+  </main>
+
+
+
+
+  <footer class="footer">
+    <div class="container">
+      <span class="text-muted">COPYRIGHT &#169; KKimishima.github.com ALL RIGHTS RESERVED. </span>
+    </div>
+  </footer>
+
+</body>
