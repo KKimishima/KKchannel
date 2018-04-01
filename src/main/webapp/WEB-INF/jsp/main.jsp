@@ -58,7 +58,7 @@
 
           <div class="text-right">
 
-            <button type="button" class="btn btn-warning" data-toggle="modal" data-postid="1" data-target="#edit">編集</button>
+            <button type="button" class="btn btn-warning" data-toggle="modal" data-postid="<c:out value="${obj.postID}"/>" data-target="#edit">編集</button>
 
           <jsp:element name="button" >
           <jsp:attribute name="class">del-btn btn btn-danger</jsp:attribute>
