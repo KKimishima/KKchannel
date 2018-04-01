@@ -22,6 +22,7 @@
   <script src="./js/login.js"></script>
   <script src="./js/delete.js"></script>
   <script src="./js/login.js"></script>
+  <script src="./js/edit.js"></script>
 
   <title>KKchannel</title>
 </head>
