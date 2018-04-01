@@ -34,42 +34,32 @@
 
     <c:forEach var="obj" items="${list}" varStatus="status">
       <!-- 投稿内容 -->
-      <div class="card my-4">
+      <div class="card my-4" id="post-data-<c:out value="${obj.postID}"/>">
         <div class="card-header  bg-info  card-post">
-          <ul class="list-inline">
+          <ul class="list-inline post-id">
             <li class="list-inline-item">
               <h5><c:out value="${obj.postID}"/></h5>
             </li>
-            <li class="list-inline-item">
+            <li class="list-inline-item post-name">
                 <h5><c:out value="${obj.userName}"/>さん</h5>
-            <li class="list-inline-item">
+            <li class="list-inline-item post-title">
               <h5><c:out value="${obj.title}"/></h5>
             </li>
-            <li class="list-inline-item">
+            <li class="list-inline-item post-date">
               <h5><c:out value="${obj.date}"/></h5>
             </li>
-            <li class="list-inline-item">
+            <li class="list-inline-item post-time">
               <h5><c:out value="${obj.time}"/></h5>
             </li>
           </ul>
         </div>
-        <div class="card-block">
+        <div class="card-block post-message">
           <p class="card-text"><c:out value="${obj.text}"/></p>
 
           <div class="text-right">
-            <a href="
-                <c:url value="/Main/Edit">
-                    <c:param name="postID" value="${obj.postID}" />
-                 </c:url>
-            " class="btn btn-warning" role="button">編集</a>
-<%--
-             <a href="
-                <c:url value="/Main/Delete">
-                    <c:param name="postID" value="${obj.postID}" />
-                 </c:url>
-             " class="btn btn-danger" role="button">削除</a>
-          </div>
---%>
+
+            <button type="button" class="btn btn-warning" data-toggle="modal" data-postid="1" data-target="#edit">編集</button>
+
           <jsp:element name="button" >
           <jsp:attribute name="class">del-btn btn btn-danger</jsp:attribute>
           <jsp:attribute name="data-postID">
@@ -82,6 +72,37 @@
         </div>
       </div>
     </c:forEach>
+
+      <%-- 編集ダイアログ--%>
+      <div class="modal fade" id="edit" data-postid="94" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title">編集</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="閉じる">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <div id="edit-result"></div>
+              <form>
+                <div class="form-group">
+                  <label for="recipient-name">タイトル：</label>
+                  <input type="text" class="form-control edit-title">
+                </div>
+                <div class="form-group">
+                  <label for="message-text">メッセージ：</label>
+                  <textarea class="form-control edit-massege"></textarea>
+                </div>
+              </form>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">閉じる</button>
+              <button type="button" class="btn btn-primary edit-post">送信</button>
+            </div>
+          </div>
+        </div>
+      </div>
 
       <!-- 投稿フォーム -->
       <div class="card">
